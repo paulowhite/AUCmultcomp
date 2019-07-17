@@ -11,8 +11,8 @@ mymaxpts <- 2500000
 ## }}}
 
 ## {{{ source useful R functions
-source("Rfunctions/PlotClosedTest.R")
-source("Rfunctions/SingleStep.R")
+source("PlotClosedTest.R")
+source("SingleStep.R")
 ## }}}
 
 ## {{{ load packages
@@ -79,7 +79,7 @@ ResPlotfunc.B <- PlotClosedTest(theest=AUCs.B,
                                 CircleSize=11,
                                 computePvalues=TRUE,
                                 mypalette=c("black","red","ForestGreen","orange","darkblue","purple"),
-                                xlim=c(-0.85,19))
+                                xlim=c(-0.89,19))
 ## dev.off()
 ## }}}
 
@@ -99,11 +99,11 @@ class(x.B) <- "AUCinference"
 myglht.B <- glht(x.B,linfct=Cmat.B)
 AllpMulcomp.B <- rbind(
     "Unadjusted"= summary(myglht.B,test=adjusted(type = "none"))$test$pvalues,
-    "Closed max-test (constaints)" = summary(myglht.B,test=adjusted(type = "Westfall", abseps=myabseps, maxpts=mymaxpts))$test$pvalues,
+    "Closed max-t test (constaints)" = summary(myglht.B,test=adjusted(type = "Westfall", abseps=myabseps, maxpts=mymaxpts))$test$pvalues,
     "Shaffer" = summary(myglht.B,test=adjusted(type = "Shaffer"))$test$pvalues,
-    "Closed max-test (free)"=summary(myglht.B,test=adjusted(type = "free", abseps=myabseps, maxpts=mymaxpts))$test$pvalues,
+    "Closed max-t test (free)"=summary(myglht.B,test=adjusted(type = "free", abseps=myabseps, maxpts=mymaxpts))$test$pvalues,
     "Bonferroni-Holm"=summary(myglht.B,test=adjusted(type = "holm"))$test$pvalues,
-    "Single-step max-test"=summary(myglht.B,test=adjusted(type = "single-step", abseps=myabseps, maxpts=mymaxpts))$test$pvalues,
+    "Single-step max-t test"=summary(myglht.B,test=adjusted(type = "single-step", abseps=myabseps, maxpts=mymaxpts))$test$pvalues,
     "Bonferroni"=summary(myglht.B,test=adjusted(type = "bonferroni"))$test$pvalues)
 round(AllpMulcomp.B,3)
 ## }}}

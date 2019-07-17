@@ -3,9 +3,9 @@
 ## Author: Paul Blanche
 ## Created: Mar 12 2018 (13:45) 
 ## Version: 
-## Last-Updated: Jul  3 2019 (16:14) 
+## Last-Updated: Jul 15 2019 (13:49) 
 ##           By: Paul Blanche
-##     Update #: 954
+##     Update #: 955
 ##----------------------------------------------------------------------
 ## 
 ### Commentary: 
@@ -352,11 +352,11 @@ PlotClosedTest <- function(theest,thevcov,C,digits=3,
     ## }}}
     ## {{{ Add legend
     text("Unadjusted: ",y= 1,x=0,pos=1)
-    if("closed-constraints" %in% show ){text("Closed max-test (constraints): ",y= 0.4,x=0,pos=1)}
+    if("closed-constraints" %in% show ){text("Closed max-t test (constraints): ",y= 0.4,x=0,pos=1)}
     if("shaffer" %in% show ){text("Shaffer: ",y= 0.2,x=0,pos=1)}   
-    if("closed-free" %in% show ){text("Closed max-test (free): ",y= 0,x=0,pos=1)}
+    if("closed-free" %in% show ){text("Closed max-t test (free): ",y= 0,x=0,pos=1)}
     if("bonf-Holm" %in% show ){text("Bonferroni-Holm: ",y= -0.2,x=0,pos=1)}
-    if("single-step" %in% show ){text("Single-step max-test: ",y= -0.4, x=0,pos=1)}
+    if("single-step" %in% show ){text("Single-step max-t test: ",y= -0.4, x=0,pos=1)}
     if("bonferroni" %in% show ){text("Bonferroni: ",y= -0.6,x=0,pos=1)}
     ## add number of intersection, i.e. cardinality of J
     for(i in 1:(theK-1)){
@@ -381,11 +381,11 @@ PlotClosedTest <- function(theest,thevcov,C,digits=3,
                            pbonf                           
                            )
     colnames(AllpvaluesOut) <- c("Unadjusted",
-                                 "Closed max-test (constraints)",
+                                 "Closed max-t test (constraints)",
                                  "Shaffer",
-                                 "Closed max-test (free)",
+                                 "Closed max-t test (free)",
                                  "Bonferroni-Holm",
-                                 "Single-step max-test",
+                                 "Single-step max-t test",
                                  "Bonferroni"                                 
                                  )
     if(notNulRownames){

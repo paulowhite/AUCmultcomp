@@ -1,8 +1,8 @@
-# Appendix to the manuscript "Closed tests for multiple comparisons of areas under the ROC curve"
+# Appendix to the manuscript "A closed max-t test for multiple comparisons of areas under the ROC curve"
 
-This repository contains data and R code to supplement the manuscript entitled "Closed tests for multiple comparisons of areas under the ROC curve", by Blanche et al.
+This repository contains data and R code to supplement the manuscript entitled "A closed max-t test for multiple comparisons of areas under the ROC curve", by Blanche et al.
 
-The R codes to reproduce the results of the manuscript for the example settings A, B, C and D are provided in the following scripts.
+The R code to reproduce the results of the manuscript for the example settings A, B, C and D are provided in the following scripts.
 
  - ExampleA.R
  - ExampleB.R
